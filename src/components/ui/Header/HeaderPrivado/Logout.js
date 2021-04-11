@@ -1,17 +1,20 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { logout } from '../../../actions/auth';
+import { useHistory } from 'react-router';
+import { logout } from '../../../../actions/auth';
 
-import {iconos}  from '../../../images/icons/index';
+import {iconos}  from '../../../../images/icons/index';
 const { iconmadera } = iconos;
 
 
 
 const Logout = () => {
     
+    const history = useHistory();
     const dispatch = useDispatch()
     const handleLogout = ()=>{
         dispatch(logout());
+        history.push('/')
     }
 
     return (
