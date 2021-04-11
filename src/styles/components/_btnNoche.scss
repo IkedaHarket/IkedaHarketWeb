@@ -1,0 +1,22 @@
+.btnNoche{
+    cursor: pointer;
+    font-size: $sizeMedia;
+    font-weight: 500;
+    margin-left: 20px;
+
+    transition: color $transisionTiempo ease;
+
+    &:hover{
+        color: $secundario;
+    }
+    img{
+        width: 30px;
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 991px){
+    .btnNoche{
+
+        margin: 15px 0;
+    }
+}

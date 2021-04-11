@@ -1,0 +1,46 @@
+
+.loginPage{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formIniciarSesion{
+    padding: 100px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $secundario;
+    h5{
+        font-size: $sizeGrande;
+        color: $fondo;
+        margin-bottom: 40px;
+    }
+    input{
+        width: 300px;
+        margin: 10px 0;
+    }
+    button{
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 500px){
+
+    .formIniciarSesion{
+        input{
+            width: 250px;
+        }
+    }
+}
+@media screen and (max-width: 400px){
+
+    .formIniciarSesion{
+        padding: 100px 20px;
+        input{
+            width: 200px;
+        }
+    }
+}

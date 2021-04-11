@@ -1,0 +1,20 @@
+@import './base/settings';          //Variables
+@import './base/base';              //Estilos bases
+
+@import './components/header';
+@import './components/btnNoche';
+@import './components/carrusel';
+@import './components/redesSeccion';
+@import './components/curva';
+@import './components/footer';
+@import './components/tituloAnimado';
+@import './components/imagenMediana';
+@import './components/habilidad';
+@import './components/btnLogout';
+
+@import './pages/inicioPage';
+@import './pages/imagenPage';
+@import './pages/portafolioPage';
+@import './pages/loginPage';
+
+

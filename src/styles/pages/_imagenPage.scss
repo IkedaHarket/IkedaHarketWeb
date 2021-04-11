@@ -1,0 +1,34 @@
+
+.imagenPage{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    img{
+        background-color: cyan;
+        width: 35vw;
+        height: auto;
+        object-fit: contain;
+        flex-grow: 1;
+        margin: 0 50px;
+    }
+    div{
+        flex-grow: 2;
+        margin: 0 40px;
+        h3{
+            font-size: $sizeTitulo;
+    
+        }
+        p{
+            font-size: $sizeMedia;
+            margin: 10px 0 60px 0;
+        }
+        .boton{
+            width: 200px;
+            text-align: center;
+        }
+    }
+    
+}

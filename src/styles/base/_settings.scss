@@ -1,0 +1,22 @@
+//*Configuraciones globales
+
+//?colors
+$fondo : #fff;
+$primario : #111;
+$secundario: #D84315;
+$fondoNabvar: #fff;
+//fuentes
+$fuentePrimaria: 'Poppins', sans-serif;
+
+//color fuentes
+$fuentePrimario: #222831;
+
+//Tamaños fuentes
+$sizeMedia: 18px;
+$sizeGrande: 30px;
+$sizeTitulo: 3rem;
+//Tiempos
+$transisionTiempo: .3s;
+$transisionTiempoLenta: .5s;
+ //Opacidad
+$opacidadSecundario: darken($color: $secundario, $amount: 15);

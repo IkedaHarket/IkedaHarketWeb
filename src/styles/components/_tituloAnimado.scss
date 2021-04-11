@@ -1,0 +1,53 @@
+
+.tituloAnimado{
+    user-select: none;
+    width: 100vw;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+        letter-spacing: 5px;
+        font-size: 5rem;
+        font-family: $fuentePrimaria;
+        color: $secundario;
+        font-weight: 500;
+        position: relative;
+        -webkit-text-stroke: .25vw $opacidadSecundario;
+        text-transform: uppercase;    
+    }
+    h2::before{
+        letter-spacing: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        font-family: $fuentePrimaria;
+        font-weight: 500;
+        color: $opacidadSecundario;
+        content: attr(data-text);
+        -webkit-text-stroke: .2vw $opacidadSecundario;
+        border-right: 5px solid $opacidadSecundario;
+        overflow:hidden;
+        animation: tituloAnimado 6s linear infinite;
+    }
+} 
+@keyframes tituloAnimado{
+    0%,10%,100%{
+        width: 0;
+    }
+    70%,90%{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 720px){
+    .tituloAnimado{
+        height: 150px;
+    }
+    .tituloAnimado h2{
+        font-size: 2.5rem;
+    }
+    
+}

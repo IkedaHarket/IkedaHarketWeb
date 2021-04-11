@@ -1,0 +1,28 @@
+.imagenMediana{
+    width: auto;
+    height: auto;
+    margin-bottom: 100px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: all $transisionTiempoLenta ease;
+        &:hover{
+            transform: scale(1.05);
+            box-shadow: 5px 5px 10px #000;
+        }
+    }
+}
+@media screen and (max-width: 576px){
+
+    .imagenMediana{
+        text-align: center;
+        img{
+            width: 90%;
+            height: 90%;
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+    }
+}

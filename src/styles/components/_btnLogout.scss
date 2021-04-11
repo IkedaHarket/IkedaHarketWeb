@@ -1,0 +1,42 @@
+.btnLogout{
+    margin: 0 20px;
+    cursor: pointer;
+    font-size: $sizeMedia;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    color: $fuentePrimario;
+    font-weight: 500;
+    transition: color $transisionTiempo ease;
+    height: 100%;
+    transform: translateY(-3px);
+    img{
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+    }
+    &:hover{
+        
+        color: $secundario;
+        
+    }
+
+}
+
+
+@media screen and (max-width: 1174px){
+    .btnLogout{
+        margin: 15px 0;
+        justify-content: space-between;
+        align-items: center;
+        height: 90%;
+        img{
+           
+        }
+        &:hover{      
+            color: $secundario;     
+        }
+    
+    }
+}
