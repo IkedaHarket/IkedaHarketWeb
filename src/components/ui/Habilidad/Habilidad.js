@@ -1,12 +1,20 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
+import { setHabilidadActiva } from '../../../actions/habilidad'
 
-const Habilidad = ({color='#00ff43',nombre='html',porcentaje="90"}) => {
+const Habilidad = ({id,color='#00ff43',nombre='html',porcentaje="90"}) => {
+    
+    const dispatch = useDispatch()
+    const handleSetHabilidadActiva = ()=>{
+        dispatch(setHabilidadActiva({id,color,nombre,porcentaje}))
+    }
 
     return (
         <Col xs={12} sm={6} lg={4} xl={3} className="habilidadesContenedor-item">
             <div 
             className="habilidad"
+            onClick={handleSetHabilidadActiva}
             >
                 <div className="habilidad__box">
                     <div className="habilidad__percent">

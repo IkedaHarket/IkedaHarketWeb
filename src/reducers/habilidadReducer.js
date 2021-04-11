@@ -56,14 +56,45 @@ const initialState = {
             nombre:'BOOTSTRAP',
             porcentaje:'65'
         },
-    ]
+    ],
+    habilidadActiva:null
 }
 
 export const habilidadReducer = (state = initialState , action)=>{
 
     switch (action.type) {
-        case types.habilidadListar:
-            return
+        case types.habilidadActivaSet:
+            return{
+                ...state,
+                habilidadActiva: action.payload
+            }
+        case types.habilidadActivaClear:
+            return{
+                ...state,
+                habilidadActiva: null
+            }
+        case types.habilidadAddApp:
+            return{
+                ...state,
+                habilidades:[
+                    ...state.habilidades,
+                    action.payload
+                ]
+            }
+        case types.habilidadUpdateApp:  
+        return{
+            ...state,
+            habilidades: state.habilidades.map(habilidad => {
+                            return (habilidad.id === action.payload.id)
+                            ?action.payload
+                            :habilidad
+                        })
+        }
+        case types.habilidadEliminarApp:
+            return{
+                ...state,
+                habilidades: state.habilidades.filter(habilidad => habilidad.id !== action.payload)
+            }
         default:    
             return state;
     }

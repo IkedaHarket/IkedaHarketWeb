@@ -9,4 +9,10 @@ export const types = {
     imgActiva: '[Galeria] Activar Imagen',
 
     habilidadListar: '[Habilidad] Listar habilidades',
+    habilidadActivaSet: '[Habilidad] Set habilidad activa',
+    habilidadActivaClear: '[Habilidad] limpiar habilidad activa',
+    habilidadAddApp:'[Habilidad] Agregar Habilidad App ',
+    habilidadUpdateApp:'[Habilidad] Actualizar Habilidad App ',
+    habilidadEliminarApp:'[Habilidad] Eliminar Habilidad App ',
+
 }

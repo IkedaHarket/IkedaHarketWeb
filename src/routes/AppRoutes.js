@@ -12,18 +12,33 @@ import GaleriaPage from '../components/pages/GaleriaPage'
 import LoginPage from '../components/pages/LoginPage'
 
 import ImagenPage from '../components/pages/ImagenPage';
-import { useSelector } from 'react-redux';
-import DashboardPage from '../components/pages/DashboardPage';
+import { useDispatch, useSelector } from 'react-redux';
 import HeaderPublico from '../components/ui/Header/HeaderPublico/HeaderPublico';
 import HeaderPrivado from '../components/ui/Header/HeaderPrivado/HeaderPrivado';
+import AdmCarrusel from '../components/pages/Dashboard/AdmCarrusel';
+import AdmAcercaDe from '../components/pages/Dashboard/AdmAcercaDe';
+import AdmHabilidades from '../components/pages/Dashboard/AdmHabilidades';
+import AdmImagenes from '../components/pages/Dashboard/AdmImagenes';
+import { login } from '../actions/auth';
 
 
 const AppRoutes = () => {
 
+  const dispatch = useDispatch();
   let {uid} = useSelector(state => state.auth)
-  if(!uid) uid = JSON.parse(localStorage.getItem('user')) || null;
-  
 
+  if(!uid){
+    uid = JSON.parse(localStorage.getItem('user')) || null;
+    if(uid){
+      try {
+        dispatch(login(uid));
+      } catch (error) {
+        
+      }
+    }
+  } 
+  
+  
 
     return (
         <Router>
@@ -36,13 +51,21 @@ const AppRoutes = () => {
           :<HeaderPublico />
         }
         <div className="ajuste-header-fixed"></div>
+
         <Switch>
+          {/* //*Si esto se agranda mas seria recomendable separar en Public Private */}
+          
+          {(!uid) && <Route path="/login" exact component={LoginPage}/>}
+          {(uid) && <Route path="/dashboard/carrusel" exact component={AdmCarrusel}/>}
+          {(uid) && <Route path="/dashboard/acercade" exact component={AdmAcercaDe}/>}
+          {(uid) && <Route path="/dashboard/habilidades" exact component={AdmHabilidades}/>}
+          {(uid) && <Route path="/dashboard/imagenes" exact component={AdmImagenes}/>}
+          
           <Route path="/galeria" exact component={GaleriaPage}/>
           <Route path="/imagen/:imagenId" exact component={ImagenPage}/>
           <Route path="/portafolio" exact component={PortafolioPage}/>
-          {(!uid) && <Route path="/login" exact component={LoginPage}/>}
           <Route path="/" exact component={InicioPage}/>
-          {(uid) && <Route path="/dashboard" exact component={DashboardPage}/>}
+
           <Redirect to="/" />
         </Switch>
       </div>

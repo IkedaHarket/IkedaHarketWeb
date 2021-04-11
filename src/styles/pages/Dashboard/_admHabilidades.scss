@@ -1,0 +1,38 @@
+.AdmHabilidades{
+    //.habilidad es para hacer mas pequeño cada item
+    .habilidad{
+        margin: 0;
+            padding: 0;
+            width: 120px;
+            height: 120px;
+        .habilidad__box{
+            margin: 0;
+            padding: 0;
+            width: auto;
+            height: auto;
+            transform: scale(0.5);
+        }
+    }
+}
+.AdmHabilidades-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .AdmHabilidades__form{
+        width: auto;
+        height: auto;
+        display: flex;
+        padding: 50px;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        input{
+            margin: 15px 0;
+            border: 1px solid $primario;
+            
+        }
+        input[type="text"],input[type="number"]{
+            width: 250px;
+        }
+    }
+} 

@@ -33,11 +33,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
                             //?MENU
 .menu__item{
     margin: 0 20px;
     cursor: pointer;
+    position: relative;
     &:hover{
         .menu__item-navlink{
             color: $secundario;
