@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import {iconos}  from '../../../images/icons/index';
-import { uiHamburgerClose } from '../../../actions/ui';
-const { iconMaple} = iconos;
+import { useDispatch, useSelector } from 'react-redux';
+import {iconos}  from '../../../../images/icons/index';
+import { uiHamburgerClose } from '../../../../actions/ui';
 
 const Select = () => {
 
     const dispatch = useDispatch();
+    const {noche} = useSelector(state => state.ui)
     const [dashboard, setDashboard] = useState(false)
 
     const handleinputDashboard = ()=>{
@@ -20,7 +20,7 @@ const Select = () => {
         <>
         <div className="menu__item" onClick={handleinputDashboard}>
             <div className="menu__item-navlink">
-                <img src={iconMaple} alt={`Icon Dashboard`}/>
+                <img src={(noche)?iconos.iconMapleDark:iconos.iconMaple} alt={`Icon Dashboard`}/>
                 Dashboard
             </div>
             <div className={`dashboardMenu ${(dashboard) && 'dashboardMenu-active'}`}>
@@ -30,13 +30,6 @@ const Select = () => {
                 onClick={handleHamburger}
                 >
                     Carrusel
-                    </NavLink>
-                <NavLink activeClassName="dashboardMenu__item-active" 
-                className="boton" 
-                to="/dashboard/acercade"
-                onClick={handleHamburger}
-                >
-                    Acerca de Mi
                     </NavLink>
                 <NavLink activeClassName="dashboardMenu__item-active" 
                 className="boton" 

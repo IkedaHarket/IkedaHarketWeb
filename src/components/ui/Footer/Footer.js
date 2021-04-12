@@ -3,15 +3,17 @@ import Curva from './Curva'
 
 import {iconos} from '../../../images/icons/index'
 import FormularioFooter from './FormularioFooter'
-const {iconMaple} = iconos
+import { useSelector } from 'react-redux'
+
 
 const Footer = () => {
+    const {noche} = useSelector(state => state.ui)
     return (
         <>
             <Curva />
             <div className="footer">
 
-                <img src={iconMaple} alt='imagenFooter'/>
+                <img src={(!noche)?iconos.iconMaple:iconos.iconMapleDark} alt='imagenFooter'/>
 
                 <FormularioFooter />
             </div>

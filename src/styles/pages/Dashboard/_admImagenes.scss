@@ -1,0 +1,40 @@
+.admImagenes{
+    text-align: center;
+}
+.admImagenes-colForm{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.admImagenes__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+    input,textarea{
+        margin: 10px 0 ;
+        border: 1px solid #777;
+    }
+    textarea{
+        width: 90%;
+        height: 100px;
+        resize: none;
+    }
+}
+
+
+
+
+
+
+
+
+.admImagenes__table{
+    td img{
+        width: 60px;
+        height: 60px;
+    }
+}

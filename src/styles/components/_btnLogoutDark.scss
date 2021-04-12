@@ -1,0 +1,25 @@
+body.dark{
+    .btnLogout{
+    
+        color: $fuentePrimarioDark;
+        
+    
+        &:hover{
+            
+            color: $secundarioDark;
+            
+        }
+    
+    }
+}
+@media screen and (max-width: 1174px){
+    body.dark{
+        .btnLogout{
+        
+            &:hover{      
+                color: $secundarioDark;     
+            }
+        
+        }
+    }
+}

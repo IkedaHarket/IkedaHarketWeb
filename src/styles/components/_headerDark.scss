@@ -1,0 +1,29 @@
+                            //?HEADER
+body.dark{
+    .header{
+        background-color: $fondoNabvarDark;
+    }
+    .header__logo{
+        h1{
+            .header__logo-link{
+                color: $primarioDark;
+            }
+        }
+    }
+    .menu__item{
+        &:hover{
+            .menu__item-navlink{
+                color: $secundarioDark;
+            }
+        }
+        .active{
+            color: $secundarioDark;
+        }
+    }
+    .menu__item-navlink{
+        color: $fuentePrimarioDark;
+    }
+    .menuXS{
+        background-color: $fondoDark;
+    }
+}

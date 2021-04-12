@@ -2,7 +2,7 @@ import { types } from "../types/types";
 
 const initialState = {
     hamburger: false,
-    noche: false,
+    noche: true,
 }
 
 export const uiReducer = (state = initialState , action)=>{
@@ -22,6 +22,11 @@ export const uiReducer = (state = initialState , action)=>{
             return{
                 ...state,
                 noche: !state.noche
+            }
+        case types.uiNocheDiaSet:
+            return{
+                ...state,
+                noche: action.payload
             }
         default:    
             return state;

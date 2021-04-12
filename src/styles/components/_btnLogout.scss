@@ -24,16 +24,12 @@
 
 }
 
-
 @media screen and (max-width: 1174px){
     .btnLogout{
         margin: 15px 0;
         justify-content: space-between;
         align-items: center;
         height: 90%;
-        img{
-           
-        }
         &:hover{      
             color: $secundario;     
         }

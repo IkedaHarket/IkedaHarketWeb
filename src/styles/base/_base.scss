@@ -8,6 +8,9 @@ html,body{
     overflow-x: hidden;
     background-color: $fondo;
 }
+body.dark{
+    background-color: $fondo;
+}
 main{
     width: 100%;
 }
@@ -27,11 +30,11 @@ main{
 // }
 .enlace{
     display: inline-block;
-    color: #000;
+    color: $primario;
     font-style: italic;
-    transition: .3s ease all;
+    transition: $transisionTiempo ease all;
     &:hover{
-        color: #777;
+        color: lighten($color: $primario, $amount: 40);
         text-decoration: none;
         transform: translateY(-3px);
     }
@@ -57,5 +60,12 @@ input,textarea{
         border: 2px solid $secundario;
         color: $secundario;
         text-decoration: none;
+    }
+}
+@media screen and (max-width: 500px){
+
+    html,body{
+        overflow-x: scroll;
+
     }
 }

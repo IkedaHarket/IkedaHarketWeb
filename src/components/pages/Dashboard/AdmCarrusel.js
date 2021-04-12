@@ -23,10 +23,10 @@ const AdmCarrusel = () => {
                         <Table striped bordered hover className="admCarrusel__table">
                             <thead>
                                 <tr>
-                                <th>Carrusel</th>
-                                <th>IMG</th>
-                                <th>Titulo</th>
-                                <th>Texto</th>
+                                <th className="texto">Carrusel</th>
+                                <th className="texto">IMG</th>
+                                <th className="texto">Titulo</th>
+                                <th className="texto">Texto</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,8 +47,8 @@ const AdmCarrusel = () => {
                                             alt={img.alt}
                                             />
                                         </td>
-                                        <td>{img.titulo}</td>
-                                        <td>{img.texto}</td>
+                                        <td className="texto">{img.titulo}</td>
+                                        <td className="texto">{img.texto}</td>
                                     </tr>
                                 ))
                                 }

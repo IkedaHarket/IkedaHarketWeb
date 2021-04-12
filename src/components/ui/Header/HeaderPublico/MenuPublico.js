@@ -5,18 +5,19 @@ import BtnNoche from '../BtnNoche';
 import MenuItem from '../MenuItem';
 
 import {iconos}  from '../../../../images/icons/index';
-const { iconGaleria,iconCodigo,iconMaple } = iconos;
+import { useSelector } from 'react-redux';
+const { iconGaleria,iconCodigo } = iconos;
 
 
 const MenuPublico = () => {
-
+    const {noche} = useSelector(state => state.ui)
 
     return (
         <nav className="menu">
 
             <MenuItem to="/portafolio" icon={iconCodigo} page="Portafolio"/>
             <MenuItem to="/galeria" icon={iconGaleria} page="Galeria"/>
-            <MenuItem to="/login" icon={iconMaple} page="Login"/>
+            <MenuItem to="/login" icon={(!noche)?iconos.iconMaple:iconos.iconMapleDark} page="Login"/>
 
             <BtnNoche />
     

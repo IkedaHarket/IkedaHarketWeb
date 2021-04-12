@@ -5,10 +5,12 @@ export const types = {
     uiHamburger : '[Hamburger] BTN',
     uiHamburgerClose : '[Hamburger] BTN Close',
     uiNocheDia :  '[NocheDiaTema] BTN Dia Noche',
+    uiNocheDiaSet :  '[NocheDiaTema] BTN Dia Noche setear',
     
     imgActiva: '[Galeria] Activar Imagen',
     imgActivaClear:'[Galeria] Limpiar Imagen Activa',
     imgCarruselAgregarQuitar:'[Galeria] [Carrusel] Agregar quitar img carrusel',
+    imgEliminarApp:'[Galeria] Eliminar Imagen',
 
     habilidadListar: '[Habilidad] Listar habilidades',
     habilidadActivaSet: '[Habilidad] Set habilidad activa',

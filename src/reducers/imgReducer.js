@@ -86,6 +86,11 @@ export const imgReducer = (state = initialState , action)=>{
                     }
                 })
             }
+        case types.imgEliminarApp:
+            return{
+                ...state,
+                imagenes: state.imagenes.filter(img => img.codigo !== action.payload)
+            }
         default:    
             return state;
     }

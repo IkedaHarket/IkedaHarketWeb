@@ -16,16 +16,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import HeaderPublico from '../components/ui/Header/HeaderPublico/HeaderPublico';
 import HeaderPrivado from '../components/ui/Header/HeaderPrivado/HeaderPrivado';
 import AdmCarrusel from '../components/pages/Dashboard/AdmCarrusel';
-import AdmAcercaDe from '../components/pages/Dashboard/AdmAcercaDe';
 import AdmHabilidades from '../components/pages/Dashboard/AdmHabilidades';
 import AdmImagenes from '../components/pages/Dashboard/AdmImagenes';
 import { login } from '../actions/auth';
+
+
 
 
 const AppRoutes = () => {
 
   const dispatch = useDispatch();
   let {uid} = useSelector(state => state.auth)
+  // const {noche} = useSelector(state => state.ui)
 
   if(!uid){
     uid = JSON.parse(localStorage.getItem('user')) || null;
@@ -37,9 +39,6 @@ const AppRoutes = () => {
       }
     }
   } 
-  
-  
-
     return (
         <Router>
       <div>
@@ -57,7 +56,6 @@ const AppRoutes = () => {
           
           {(!uid) && <Route path="/login" exact component={LoginPage}/>}
           {(uid) && <Route path="/dashboard/carrusel" exact component={AdmCarrusel}/>}
-          {(uid) && <Route path="/dashboard/acercade" exact component={AdmAcercaDe}/>}
           {(uid) && <Route path="/dashboard/habilidades" exact component={AdmHabilidades}/>}
           {(uid) && <Route path="/dashboard/imagenes" exact component={AdmImagenes}/>}
           

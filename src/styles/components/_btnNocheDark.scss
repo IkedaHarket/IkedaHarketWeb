@@ -1,0 +1,8 @@
+body.dark{
+    .btnNoche{
+        color: $primarioDark;
+        &:hover{
+            color: $secundarioDark;
+        }
+    }
+}

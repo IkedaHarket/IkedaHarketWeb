@@ -21,3 +21,15 @@ $transisionTiempo: .3s;
 $transisionTiempoLenta: .5s;
  //Opacidad
 $opacidadSecundario: darken($color: $secundario, $amount: 15);
+
+//*Configuraciones globales Dark
+
+//?colors
+$fondoDark : rgb(19, 18, 18);
+$primarioDark : rgb(255, 255, 255);
+$secundarioDark: #a525b1;
+$fondoNabvarDark: rgb(31, 31, 31);
+//color fuentes
+$fuentePrimarioDark: #c8c8c8;
+ //Opacidad
+$opacidadSecundarioDark: darken($color: $secundarioDark, $amount: 15);

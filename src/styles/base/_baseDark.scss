@@ -1,0 +1,26 @@
+
+html,body{
+    background-color: $fondo;
+}
+body.dark{
+    background-color: $fondoDark;
+    .texto{
+        color: $primarioDark;
+    }
+    .enlace{
+        color: $primarioDark;
+        &:hover{
+            color: darken($color: $primarioDark, $amount: 40);
+        }
+    }
+    .boton{
+        background-color: $secundarioDark;
+        border: 2px solid $secundarioDark;
+        color: $primarioDark;
+        &:hover{
+            background-color: $fondoDark;
+            border: 2px solid $secundarioDark;
+            color: $secundarioDark;
+        }
+    }
+}

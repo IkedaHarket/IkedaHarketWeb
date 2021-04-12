@@ -1,0 +1,15 @@
+
+body.dark{
+    
+    .tituloAnimado{
+        h2{
+            color: $secundarioDark;
+            -webkit-text-stroke: .2vw $opacidadSecundarioDark;  
+        }
+        h2::before{
+            color: $opacidadSecundarioDark;
+            -webkit-text-stroke: .2vw $secundarioDark;
+            border-right: 5px solid $opacidadSecundarioDark;
+        }
+    }
+}

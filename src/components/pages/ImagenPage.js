@@ -22,8 +22,8 @@ const ImagenPage = ({history}) => {
 
                 <img src={img} alt={titulo}/>
                 <div>
-                    <h3 className="imagenPage__titulo ">{titulo}</h3>
-                    <p>{texto}</p>
+                    <h3 className="imagenPage__titulo texto">{titulo}</h3>
+                    <p className="texto">{texto}</p>
                     <Link
                     to="/galeria"
                     className="boton"

@@ -1,24 +1,36 @@
-@import './base/settings';          //Variables
-@import './base/base';              //Estilos bases
+@import './base/settings';//Variables
+
+@import './base/base';    //Estilos bases
+@import './base/baseDark';    //Estilos bases
 
 @import './components/header';
+@import './components/headerDark';
 @import './components/btnNoche';
+@import './components/btnNocheDark';
 @import './components/carrusel';
 @import './components/redesSeccion';
 @import './components/curva';
 @import './components/footer';
 @import './components/tituloAnimado';
+@import './components/tituloAnimadoDark';
 @import './components/imagenMediana';
+@import './components/imagenMedianaDark';
 @import './components/habilidad';
+@import './components/habilidadDark';
 @import './components/btnLogout';
+@import './components/btnLogoutDark';
 @import './components/selectDashboard';
+@import './components/selectDashboardDark';
 
 @import './pages/inicioPage';
+@import './pages/inicioPageDark';
 @import './pages/imagenPage';
 @import './pages/portafolioPage';
 @import './pages/loginPage';
+@import './pages/loginPageDark';
 
 @import './pages/Dashboard/admHabilidades';
 @import './pages/Dashboard/admCarrusel';
+@import './pages/Dashboard/admImagenes';
 
 

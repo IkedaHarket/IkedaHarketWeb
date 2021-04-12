@@ -5,7 +5,7 @@ import MenuItem from '../MenuItem';
 import Logout from './Logout';
 import BtnNoche from '../BtnNoche';
 import {iconos}  from '../../../../images/icons/index';
-import Select from '../Select';
+import Select from './Select';
 const { iconGaleria,iconCodigo } = iconos;
 
 const MenuPrivado = () => {

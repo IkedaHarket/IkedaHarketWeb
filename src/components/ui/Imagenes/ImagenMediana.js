@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { imgActiva } from '../../../actions/img';
+import { imgActivaSet } from '../../../actions/img';
 
 const ImagenMediana = ({codigo,img,titulo,texto,alt,carrusel}) => {
 
@@ -11,7 +11,7 @@ const ImagenMediana = ({codigo,img,titulo,texto,alt,carrusel}) => {
 
     const handleClick =()=>{
         localStorage.setItem('imgActiva',JSON.stringify(imagen))
-        dispatch(imgActiva(imagen))
+        dispatch(imgActivaSet(imagen))
     }
     return (
         <div 
