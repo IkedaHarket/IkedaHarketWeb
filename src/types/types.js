@@ -7,6 +7,8 @@ export const types = {
     uiNocheDia :  '[NocheDiaTema] BTN Dia Noche',
     
     imgActiva: '[Galeria] Activar Imagen',
+    imgActivaClear:'[Galeria] Limpiar Imagen Activa',
+    imgCarruselAgregarQuitar:'[Galeria] [Carrusel] Agregar quitar img carrusel',
 
     habilidadListar: '[Habilidad] Listar habilidades',
     habilidadActivaSet: '[Habilidad] Set habilidad activa',

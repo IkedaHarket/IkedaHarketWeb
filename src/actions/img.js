@@ -8,3 +8,11 @@ export const imgActiva = (imagen)=>{
         payload: imagen
     }
 }
+export const imgActivaClear = ()=>({type: types.imgActivaClear});
+
+export const actualizarImagenCarrusel = (id)=>{
+    return{
+        type: types.imgCarruselAgregarQuitar,
+        payload:id
+    }
+}

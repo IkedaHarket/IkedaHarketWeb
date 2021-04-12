@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import { logout } from '../../../../actions/auth';
 
 import {iconos}  from '../../../../images/icons/index';
-const { iconmadera } = iconos;
+const { iconMadera } = iconos;
 
 
 
@@ -23,7 +23,7 @@ const Logout = () => {
         onClick={handleLogout}
         >
             <img 
-            src={iconmadera}
+            src={iconMadera}
             alt="Logout"
             />
             Logout

@@ -26,7 +26,7 @@ const AdmHabilidades = () => {
         }else{
             setFormValues(initialForm)
         }
-    },[habilidadActiva])
+    },[habilidadActiva,setFormValues])
     
     const {id,color,nombre,porcentaje} = formValues
 

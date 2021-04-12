@@ -7,7 +7,6 @@
     align-items: center;
     flex-wrap: wrap;
     img{
-        background-color: cyan;
         width: 35vw;
         height: auto;
         object-fit: contain;
@@ -17,6 +16,8 @@
     div{
         flex-grow: 2;
         margin: 0 40px;
+        min-width: 40vw;
+        max-width: 45vw;
         h3{
             font-size: $sizeTitulo;
     
@@ -31,4 +32,30 @@
         }
     }
     
+}
+@media screen and (max-width: 1050px){
+    
+.imagenPage{
+
+    img{
+        margin-top: 50px;
+    }
+    div{
+        margin-top: 50px;
+        h3{
+            font-size: $sizeGrande;
+    
+        }
+        p{
+            text-align: left;
+            font-size: $sizePeque;
+            margin: 10px 0 60px 0;
+        }
+        .boton{
+            width: 200px;
+            text-align: center;
+        }
+    }
+    
+}
 }

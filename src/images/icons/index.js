@@ -3,7 +3,9 @@ import iconCodigo   from './codigo.svg'
 import iconMaple    from './maple.svg'
 import iconMoon     from './moon.svg'
 import iconSun     from './sun.svg'
-import iconmadera     from './madera.svg'
+import iconMadera     from './madera.svg'
+import iconAprobar     from './aprobar.svg'
+import iconCerrar     from './cerrar.svg'
 
 export const iconos = {
     iconGaleria,
@@ -11,5 +13,7 @@ export const iconos = {
     iconMaple,
     iconMoon,
     iconSun,
-    iconmadera,
+    iconMadera,
+    iconAprobar,
+    iconCerrar,
 }
