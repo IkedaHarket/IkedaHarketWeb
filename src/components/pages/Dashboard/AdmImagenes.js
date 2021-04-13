@@ -3,13 +3,13 @@ import { Col, Container, Form, Row, Table } from 'react-bootstrap'
 import TituloAnimado from '../../ui/TituloAnimado/TituloAnimado'
 import {iconos} from '../../../images/icons/index'
 import { useDispatch, useSelector } from 'react-redux'
-import { eliminarImagenApp, imgActivaClear, imgActivaSet, startUploadingImage } from '../../../actions/img'
+import { eliminarImagenApp, imgActivaClear, imgActivaSet, startActualizarImage, startUploadingImage } from '../../../actions/img'
 import { useForm } from '../../../hooks/useForm'
 import Swal from 'sweetalert2'
 const {iconAprobar, iconCerrar} = iconos
 
 const initialForm = {
-    codigo:'',
+    codigo: '',
     img:'',
     titulo:'',
     texto:'',
@@ -30,7 +30,7 @@ const AdmImagenes = () => {
         }
     },[imgActiva,setFormValues])
     
-    const {codigo,img,titulo,texto,carrusel} = formValues //Falta extraer alt
+    const {codigo,titulo,texto,carrusel} = formValues //Falta extraer alt
 
     const reset = ()=>{
         dispatch(imgActivaClear());
@@ -52,10 +52,17 @@ const AdmImagenes = () => {
     }
     const handleSubmit = (e)=>{
         e.preventDefault();
-        //TODO: AGREGAR MODIFICAR IMAGEN
-        //TODO: Falta pedir la img del form
-        
-        dispatch(startUploadingImage(img))
+        if(titulo.length < 2) return Swal.fire('Error','El titulo es demasiado corto','error');
+        if(texto.length < 2) return Swal.fire('Error','El texto es demasiado corto','error');
+        if(!formValues.img)return Swal.fire('Error','Debe seleccionar una imagen','error');
+        if(codigo){
+            (imgActiva.img === formValues.img)
+            ?dispatch(startActualizarImage(formValues,false))
+            :dispatch(startActualizarImage(formValues,true))
+        }else{
+            dispatch(startUploadingImage(formValues))
+        }
+        setFormValues(initialForm)
     }
 
     return (

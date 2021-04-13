@@ -1,4 +1,6 @@
 
-.habilidad__text{
-    color: $primarioDark;
+body.dark{
+    .habilidad__text{
+        color: $primarioDark;
+    } 
 }

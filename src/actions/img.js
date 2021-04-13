@@ -24,11 +24,11 @@ export const eliminarImagenApp = (id)=>{
         payload:id
     }
 }
-export const startUploadingImage = (file)=>{
+export const startUploadingImage = (img)=>{
     return async(dispatch) =>{
         Swal.fire({
-            title:'Uploading...',
-            text:'Please Wait...',
+            title:'Agregando...',
+            text:'Espere...',
             showConfirmButton:false,
             allowOutsideClick:false,
             willOpen: ()=>{
@@ -36,9 +36,46 @@ export const startUploadingImage = (file)=>{
             }
         })
 
-        await fileUpload(file); //*Para limpiar la consola Temporal
-        // const fileUrl  = await fileUpload(file);
+        const fileUrl  = await fileUpload(img.img);
+        img.img = fileUrl
+        img.codigo= new Date().getTime()
+        dispatch(agregarImagenApp(img))
         //TODo agregar a la base de datos
+
         Swal.close();
+    }
+}
+export const startActualizarImage = (img,imgNueva)=>{
+    return async(dispatch) =>{
+        Swal.fire({
+            title:'Actualizando...',
+            text:'Espere...',
+            showConfirmButton:false,
+            allowOutsideClick:false,
+            willOpen: ()=>{
+                Swal.showLoading();
+            }
+        })
+
+        if(imgNueva){
+            const fileUrl  = await fileUpload(img.img);
+            img.img = fileUrl   
+        }
+        dispatch(imgUpdateImagenApp(img))
+        //TODo agregar a la base de datos
+
+        Swal.close();
+    }
+}
+export const agregarImagenApp = (img)=>{
+    return{
+        type: types.imgAgregarImagenApp,
+        payload:img
+    }
+}
+export const imgUpdateImagenApp = (img)=>{
+    return{
+        type: types.imgUpdateImagenApp,
+        payload:img
     }
 }

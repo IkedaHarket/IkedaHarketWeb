@@ -86,6 +86,23 @@ export const imgReducer = (state = initialState , action)=>{
                     }
                 })
             }
+        case types.imgAgregarImagenApp:
+        return{
+            ...state,
+            imagenes:[
+                ...state.imagenes,
+                action.payload
+            ]
+        }
+        case types.imgUpdateImagenApp:  
+        return{
+            ...state,
+            imagenes: state.imagenes.map(img => {
+                            return (img.codigo === action.payload.codigo)
+                            ?action.payload
+                            :img
+                        })
+        }
         case types.imgEliminarApp:
             return{
                 ...state,
