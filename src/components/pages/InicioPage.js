@@ -11,7 +11,7 @@ const InicioPage = () => {
             <Row className="acercaDe">
                 <Col lg={1} className="d-none d-lg-block"/>
                 <Col xs={12} lg={3} className="acercaDe__img">
-                    <img src="https://ikedaharket.com/img/yo/1.jpg" alt="fotoPerfil"/>
+                    <img src="https://res.cloudinary.com/de9ty2vgh/image/upload/v1618324083/64275c6b-55f4-4239-a093-12283bfd91fa_dzs1ur.jpg" alt="fotoPerfil"/>
                 </Col>
                 <Col xs={12} lg={7} className="acercaDe__texto">
                     <h2 className="titulo">Acerca de mi</h2>

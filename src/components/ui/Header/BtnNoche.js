@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { uiHamburgerClose, uiNocheDia, uiNocheDiaSet } from '../../../actions/ui';
 
 import {iconos}  from '../../../images/icons/index';
@@ -13,7 +13,7 @@ const BtnNoche = () => {
     
     useEffect(() => {
         dispatch(uiNocheDiaSet(noche))
-    }, [dispatch,noche])
+    }, [dispatch])
 
     const handleNocheDia = ()=>{
 

@@ -4,7 +4,7 @@ const initialState = {
     imagenes:[
         {
             codigo: new Date().getTime(),
-            img:'https://ikedaharket.com/paginas/Completa1/img/TeVerde.jpg',
+            img:'https://res.cloudinary.com/de9ty2vgh/image/upload/v1618324063/TeVerde_vfrkwr.jpg',
             titulo:'Te verde',
             texto:'Este es un te muy rico pero no se por que es verde',
             alt: 'nombre',
@@ -12,7 +12,7 @@ const initialState = {
         },
         {
             codigo: '1234',
-            img:'https://ikedaharket.com/paginas/Completa2/img/fondo2.jpg',
+            img:'https://res.cloudinary.com/de9ty2vgh/image/upload/v1618324051/fondo2_bl05vy.jpg',
             titulo:'Anime',
             texto:'No conosco este anime pero da igual',
             alt: 'nombre',
@@ -21,7 +21,7 @@ const initialState = {
         ,
         {
             codigo: '111',
-            img:'https://www.ikedaharket.com/img/carousel/1.jpg',
+            img:'https://res.cloudinary.com/de9ty2vgh/image/upload/v1618324240/20190808_121455_a52ztd.jpg',
             titulo:'Cubito Rubik',
             texto:'Este cubo solo lo he podido armar 2 veces',
             alt: 'nombre',
@@ -30,7 +30,7 @@ const initialState = {
         ,
         {
             codigo: '222',
-            img:'https://www.ikedaharket.com/img/carousel/2.jpg',
+            img:'https://res.cloudinary.com/de9ty2vgh/image/upload/v1618324266/20200529_185103_jalny4.jpg',
             titulo:'Mi PC',
             texto:'Una foto antigua de mi computadora',
             alt: 'nombre',
@@ -39,7 +39,7 @@ const initialState = {
         ,
         {
             codigo: '333',
-            img:'https://www.ikedaharket.com/img/carousel/3.jpg',
+            img:'https://res.cloudinary.com/de9ty2vgh/image/upload/a_270/v1618324432/20170607_151620_zm4d06.jpg',
             titulo:'Hoja',
             texto:'Esta foto motivo que me gustara sacar fotos de cosas random, fue cuando estudiaba electricidad en el liceo.',
             alt: 'nombre',
@@ -47,7 +47,7 @@ const initialState = {
         },
         {
             codigo: '444',
-            img:'https://www.ikedaharket.com/img/carousel/4.jpg',
+            img:'https://res.cloudinary.com/de9ty2vgh/image/upload/v1618324289/20161103_104715_ccygiy.jpg',
             titulo:'Motorcito',
             texto:'Un motorcito que parece perro',
             alt: 'nombre',
