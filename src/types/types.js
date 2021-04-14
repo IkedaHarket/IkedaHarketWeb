@@ -10,6 +10,7 @@ export const types = {
     uiNocheDia :  '[NocheDiaTema] BTN Dia Noche',
     uiNocheDiaSet :  '[NocheDiaTema] BTN Dia Noche setear',
     
+    imgCargando: '[Galeria] Cargando Imagenes',
     imgActiva: '[Galeria] Activar Imagen',
     imgActivaClear:'[Galeria] Limpiar Imagen Activa',
     imgCarruselAgregarQuitar:'[Galeria] [Carrusel] Agregar quitar img carrusel',

@@ -3,7 +3,7 @@ import { Col,Row, Container, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import TituloAnimado from '../../ui/TituloAnimado/TituloAnimado'
 import {iconos} from '../../../images/icons/index'
-import { actualizarImagenCarrusel } from '../../../actions/img'
+import { actualizarImagenCarrusel, startCambiarCarrusel } from '../../../actions/img'
 const {iconAprobar, iconCerrar} = iconos
 
 const AdmCarrusel = () => {
@@ -11,8 +11,8 @@ const AdmCarrusel = () => {
     const {imagenes} = useSelector(state => state.img)
     const dispatch = useDispatch();
 
-    const handleActualizarCarrusel = (id)=>{
-        dispatch(actualizarImagenCarrusel(id))
+    const handleActualizarCarrusel = (img)=>{
+        dispatch(startCambiarCarrusel(img))
     }
     return (
         <div className="admCarrusel">
@@ -34,7 +34,7 @@ const AdmCarrusel = () => {
                                 imagenes.map(img=>(
                                     <tr key={img.codigo} 
                                     onClick={
-                                        ()=>handleActualizarCarrusel(img.codigo)
+                                        ()=>handleActualizarCarrusel(img)
                                     }
                                     >
                                         <td className="centrar">

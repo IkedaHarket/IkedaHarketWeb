@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,6 +19,7 @@ import AdmCarrusel from '../components/pages/Dashboard/AdmCarrusel';
 import AdmHabilidades from '../components/pages/Dashboard/AdmHabilidades';
 import AdmImagenes from '../components/pages/Dashboard/AdmImagenes';
 import { login } from '../actions/auth';
+import { startVerImagenes } from '../actions/img';
 
 
 
@@ -27,7 +28,12 @@ const AppRoutes = () => {
 
   const dispatch = useDispatch();
   let {uid} = useSelector(state => state.auth)
+  let {imagenesCargando} = useSelector(state => state.img)
 
+  useEffect(() => {
+    dispatch(startVerImagenes());
+  }, [dispatch])
+  
   if(!uid){
     uid = JSON.parse(localStorage.getItem('user')) || null;
     if(uid){
@@ -38,6 +44,9 @@ const AppRoutes = () => {
       }
     }
   } 
+  if(imagenesCargando){
+    return <h1 className="texto">Espere...</h1>
+  }
     return (
         <Router>
       <div>

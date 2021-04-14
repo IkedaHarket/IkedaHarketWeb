@@ -3,7 +3,13 @@ import { Col, Container, Form, Row, Table } from 'react-bootstrap'
 import TituloAnimado from '../../ui/TituloAnimado/TituloAnimado'
 import {iconos} from '../../../images/icons/index'
 import { useDispatch, useSelector } from 'react-redux'
-import { eliminarImagenApp, imgActivaClear, imgActivaSet, startActualizarImage, startUploadingImage } from '../../../actions/img'
+import {    imgActivaClear,
+            imgActivaSet,
+            startActualizarHabilidad,
+            startActualizarImagen,
+            startBorrarImagen,
+            startCrearImagen 
+        } from '../../../actions/img'
 import { useForm } from '../../../hooks/useForm'
 import Swal from 'sweetalert2'
 const {iconAprobar, iconCerrar} = iconos
@@ -40,7 +46,7 @@ const AdmImagenes = () => {
         dispatch(imgActivaSet(img))
     }
     const handleEliminar = ()=>{
-        dispatch(eliminarImagenApp(codigo));
+        dispatch(startBorrarImagen(codigo));
         Swal.fire('Listo','Imagen eliminada correctamente','success')
         setFormValues(initialForm)
     }
@@ -57,10 +63,10 @@ const AdmImagenes = () => {
         if(!formValues.img)return Swal.fire('Error','Debe seleccionar una imagen','error');
         if(codigo){
             (imgActiva.img === formValues.img)
-            ?dispatch(startActualizarImage(formValues,false))
-            :dispatch(startActualizarImage(formValues,true))
+            ?dispatch(startActualizarImagen(formValues,false))
+            :dispatch(startActualizarImagen(formValues,true))
         }else{
-            dispatch(startUploadingImage(formValues))
+            dispatch(startCrearImagen(formValues))
         }
         setFormValues(initialForm)
     }
