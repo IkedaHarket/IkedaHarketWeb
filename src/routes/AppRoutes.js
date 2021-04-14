@@ -27,7 +27,6 @@ const AppRoutes = () => {
 
   const dispatch = useDispatch();
   let {uid} = useSelector(state => state.auth)
-  // const {noche} = useSelector(state => state.ui)
 
   if(!uid){
     uid = JSON.parse(localStorage.getItem('user')) || null;

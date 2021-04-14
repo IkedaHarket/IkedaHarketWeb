@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux'
 import { setHabilidadActiva } from '../../../actions/habilidad'
 
 const Habilidad = ({id,color='#00ff43',nombre='html',porcentaje="90"}) => {
-    
     const dispatch = useDispatch()
     const handleSetHabilidadActiva = ()=>{
         dispatch(setHabilidadActiva({id,color,nombre,porcentaje}))

@@ -1,6 +1,7 @@
 import { types } from "../types/types";
 
 const initialState = {
+    checking: false,
     uid: null,
     displayName:null
 }

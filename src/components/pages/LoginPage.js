@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import Swal from 'sweetalert2'
-import { login } from '../../actions/auth'
+import { startLogin } from '../../actions/auth'
 import { useForm } from '../../hooks/useForm'
 import Footer from '../ui/Footer/Footer'
 
@@ -12,19 +12,21 @@ const LoginPage = ({history}) => {
 
     const [formValues,handleInputChange] = useForm({
         correo:'sebaaignacio111@gmail.com',
-        password:'123456'
+        password:'!tbbtIkeda11'
     });
     const {correo,password} = formValues;
-    const handleLogin = (e)=>{
+    const handleLogin = async(e)=>{
         e.preventDefault();
         if(correo.length === 0) return Swal.fire('Error', 'El correo es obligatorio','error')
         if(password.length === 0) return Swal.fire('Error', 'La contraseña es obligatoria','error')
         if(password.length < 6) return Swal.fire('Error', 'La contraseña es menor de 6 caracteres','error')
 
-        //TODO aqui consulto a la bd en el futuro :3
-
-        dispatch(login('123','Ikeda Harket'))
-        history.push('/dashboard')
+        const res = await dispatch(startLogin(correo,password))
+        if(res?.error){
+            Swal.fire('Error', res.msg ,'error')
+        }else{
+            history.push('/dashboard')
+        }
     }
     return (
         <>

@@ -2,10 +2,15 @@ import React,{useEffect} from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import TituloAnimado from '../../ui/TituloAnimado/TituloAnimado'
 import { useDispatch, useSelector } from 'react-redux'
-import Habilidad from '../../ui/Habilidad/Habilidad'
-import { agregarHabilidadApp, limpiarHabilidadActiva,actualizarHabilidadApp, eliminarHabilidadApp } from '../../../actions/habilidad'
+import { 
+        limpiarHabilidadActiva,
+        startCrearhabilidad, 
+        startBorrarHabilidad,
+        startActualizarHabilidad
+    } from '../../../actions/habilidad'
 import { useForm } from '../../../hooks/useForm'
 import Swal from 'sweetalert2'
+import HabilidadesContenedor from '../../ui/Habilidad/HabilidadesContenedor'
 
 const initialForm = {
     id:'',
@@ -16,7 +21,7 @@ const initialForm = {
 const AdmHabilidades = () => {
     
     const dispatch = useDispatch();
-    const {habilidades,habilidadActiva} = useSelector(state => state.habilidad)
+    const {habilidadActiva} = useSelector(state => state.habilidad)
 
     const [ formValues, handleInputChange,,setFormValues ] = useForm(initialForm)
 
@@ -36,18 +41,18 @@ const AdmHabilidades = () => {
     const handleSubmit = (e)=>{
         e.preventDefault();
         if(nombre.length < 2) return Swal.fire('Error','El nombre es demasiado corto','error');
+        if(porcentaje === '') return Swal.fire('Error','El porcentaje es obligatorio','error');
         if(porcentaje.length < 0 || porcentaje.length > 100) return Swal.fire('Error','El porcentaje debe estar entre 0 y 100','error');
         if(id){
-            dispatch(actualizarHabilidadApp(formValues))
-            Swal.fire('Listo','Habilidad actualizada correctamente','success')
+            dispatch(startActualizarHabilidad(formValues))
         }else{
-            dispatch(agregarHabilidadApp(formValues))
-            Swal.fire('Listo','Habilidad agregada correctamente','success')
+            dispatch(startCrearhabilidad(formValues))
         }
         setFormValues(initialForm)
     }
     const handleEliminar = ()=>{
-        dispatch(eliminarHabilidadApp(id));
+        console.log(id)
+        dispatch(startBorrarHabilidad(id));
         Swal.fire('Listo','Habilidad eliminada correctamente','success')
         setFormValues(initialForm)
     }
@@ -111,16 +116,7 @@ const AdmHabilidades = () => {
                         </form>
                     </Col>
                     <Col xs={12} lg={6} className="habilidadesContenedor">
-                        <Row>
-                        {
-                            habilidades.map((habilidad)=>(       
-                                <Habilidad 
-                                key={habilidad.id} 
-                                {...habilidad}
-                                />   
-                            ))
-                        }
-                        </Row>
+                        <HabilidadesContenedor />
                     </Col>
                 </Row>
             </Container>

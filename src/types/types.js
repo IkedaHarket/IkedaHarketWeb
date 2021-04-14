@@ -1,4 +1,7 @@
 export const types = {
+
+    servidorAPI:'http://localhost:4000/api', //*Para cambiar entre produccion y desarrollo
+
     authLogin: '[Auth] login',
     authLogout: '[Auth] logout',
 
@@ -14,6 +17,8 @@ export const types = {
     imgAgregarImagenApp:'[Galeria] Agregar Imagen App',
     imgUpdateImagenApp:'[Galeria] Actualizar Imagen App',
 
+    habilidadCargando:'[Habilidad] Cargando Habilidades',
+    habilidadCargarHabilidades:'[Habilidad] Cargar Habilidades',
     habilidadListar: '[Habilidad] Listar habilidades',
     habilidadActivaSet: '[Habilidad] Set habilidad activa',
     habilidadActivaClear: '[Habilidad] limpiar habilidad activa',
