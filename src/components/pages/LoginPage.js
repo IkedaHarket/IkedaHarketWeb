@@ -11,8 +11,8 @@ const LoginPage = ({history}) => {
     const dispatch = useDispatch()
 
     const [formValues,handleInputChange] = useForm({
-        correo:'sebaaignacio111@gmail.com',
-        password:'!tbbtIkeda11'
+        correo:'',
+        password:''
     });
     const {correo,password} = formValues;
     const handleLogin = async(e)=>{
