@@ -6,20 +6,20 @@ import { useForm } from '../../../hooks/useForm'
 const FormularioFooter = () => {
 
     const [formValues, handleInputChange,,setFormValues] = useForm({
-        asunto:'',
+        correo:'',
         mensaje:''
     });
 
-    const {asunto,mensaje} = formValues;
+    const {correo,mensaje} = formValues;
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        if(asunto.length === 0) return Swal.fire('Error', 'El Asunto es obligatorio','error')
+        if(correo.length === 0) return Swal.fire('Error', 'El Correo es obligatorio','error')
         if(mensaje.length === 0) return Swal.fire('Error', 'La Mensaje es obligatorio','error')
 
-        sendCorreo(asunto,mensaje)
+        sendCorreo(correo,mensaje)
         setFormValues({
-            asunto:'',
+            correo:'',
             mensaje:''
         })
     }
@@ -30,9 +30,9 @@ const FormularioFooter = () => {
         >        
             <input 
             type="text"
-            placeholder="Asunto"
-            name="asunto"
-            value={asunto}
+            placeholder="Correo"
+            name="correo"
+            value={correo}
             onChange={handleInputChange}
             />
             <textarea 
