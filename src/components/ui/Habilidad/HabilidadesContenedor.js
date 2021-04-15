@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { startVerHabilidad } from '../../../actions/habilidad'
+import SpriteCaminando from '../Esperando/SpriteCaminando'
 import Habilidad from './Habilidad'
 
 const HabilidadesContenedor = () => {
@@ -16,9 +17,10 @@ const HabilidadesContenedor = () => {
     return (
         <Container>
             <Row className="habilidadesContenedor">
+            
                 {   
                     (habilidadCargando) 
-                     ?<h1 className="texto">Espere...</h1>
+                     ?<div className="centrar"> <SpriteCaminando /> </div>
                      :habilidades.map((habilidad)=>(       
                         <Habilidad key={habilidad.id} {...habilidad} />   
                      ))

@@ -20,6 +20,12 @@
 .acercaDe__texto{
     color: $primario;
 }
+.acercaDe__sprite{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media screen and (max-width: 1380px){
     .acercaDe__img{
         width: 270px;

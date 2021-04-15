@@ -20,6 +20,7 @@ import AdmHabilidades from '../components/pages/Dashboard/AdmHabilidades';
 import AdmImagenes from '../components/pages/Dashboard/AdmImagenes';
 import { login } from '../actions/auth';
 import { startVerImagenes } from '../actions/img';
+import SpriteCaminando from '../components/ui/Esperando/SpriteCaminando';
 
 
 
@@ -45,7 +46,11 @@ const AppRoutes = () => {
     }
   } 
   if(imagenesCargando){
-    return <h1 className="texto">Espere...</h1>
+    return (
+      <div className="spriteCaminando-contenedor fondo">
+          <SpriteCaminando />
+      </div>
+    )
   }
     return (
         <Router>
