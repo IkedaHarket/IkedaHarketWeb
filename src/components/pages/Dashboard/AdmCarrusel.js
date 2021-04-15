@@ -3,7 +3,7 @@ import { Col,Row, Container, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import TituloAnimado from '../../ui/TituloAnimado/TituloAnimado'
 import {iconos} from '../../../images/icons/index'
-import { actualizarImagenCarrusel, startCambiarCarrusel } from '../../../actions/img'
+import { startCambiarCarrusel } from '../../../actions/img'
 const {iconAprobar, iconCerrar} = iconos
 
 const AdmCarrusel = () => {

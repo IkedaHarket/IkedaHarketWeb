@@ -25,8 +25,8 @@ const InicioPage = () => {
                     <p className="texto">
                         Quise hacer esta página para juntar todo lo que me gusta en un solo lugar. 🍁
                     </p>
-                    
                     <div className="acercaDe__sprite"><SpriteCaminando /> </div>
+            
                 </Col>
                 <Col lg={1} className="d-none d-lg-block"/>
             </Row>

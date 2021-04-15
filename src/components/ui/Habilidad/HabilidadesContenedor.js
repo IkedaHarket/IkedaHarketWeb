@@ -17,10 +17,9 @@ const HabilidadesContenedor = () => {
     return (
         <Container>
             <Row className="habilidadesContenedor">
-            
                 {   
                     (habilidadCargando) 
-                     ?<div className="centrar"> <SpriteCaminando /> </div>
+                     ?<div className=" centrar"> <SpriteCaminando /> </div>
                      :habilidades.map((habilidad)=>(       
                         <Habilidad key={habilidad.id} {...habilidad} />   
                      ))

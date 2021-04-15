@@ -1,10 +1,11 @@
 import React from 'react'
 import Swal from 'sweetalert2';
+import { sendCorreo } from '../../../actions/sendCorreo';
 import { useForm } from '../../../hooks/useForm'
 
 const FormularioFooter = () => {
 
-    const [formValues, handleInputChange] = useForm({
+    const [formValues, handleInputChange,,setFormValues] = useForm({
         asunto:'',
         mensaje:''
     });
@@ -15,9 +16,12 @@ const FormularioFooter = () => {
         e.preventDefault();
         if(asunto.length === 0) return Swal.fire('Error', 'El Asunto es obligatorio','error')
         if(mensaje.length === 0) return Swal.fire('Error', 'La Mensaje es obligatorio','error')
-        //TODO: MANDAR MENSAJE
 
-        
+        sendCorreo(asunto,mensaje)
+        setFormValues({
+            asunto:'',
+            mensaje:''
+        })
     }
     return (
         <form 

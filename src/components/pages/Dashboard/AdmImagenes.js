@@ -5,7 +5,6 @@ import {iconos} from '../../../images/icons/index'
 import { useDispatch, useSelector } from 'react-redux'
 import {    imgActivaClear,
             imgActivaSet,
-            startActualizarHabilidad,
             startActualizarImagen,
             startBorrarImagen,
             startCrearImagen 
