@@ -1,7 +1,7 @@
 export const types = {
 
-    // servidorAPI:'http://localhost:4000/api', //*Para cambiar entre produccion y desarrollo
-    servidorAPI:'https://ikedaweb.herokuapp.com/api', //*Para cambiar entre produccion y desarrollo
+    servidorAPI:'http://localhost:4000/api', //*Para cambiar entre produccion y desarrollo
+    // servidorAPI:'https://ikedaweb.herokuapp.com/api', //*Para cambiar entre produccion y desarrollo
 
     authLogin: '[Auth] login',
     authLogout: '[Auth] logout',

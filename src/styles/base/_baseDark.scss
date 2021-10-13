@@ -23,4 +23,15 @@ body.dark{
             color: $secundarioDark;
         }
     }
+    .hamburger{
+        .hamburger-box{
+            .hamburger-inner,
+            .hamburger-inner::after,
+            .hamburger-inner::before{
+                background-color: $primarioDark;
+                color: $primarioDark;
+                
+            }
+        }
+    }
 }

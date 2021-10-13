@@ -29,7 +29,7 @@ const FormularioFooter = () => {
         onSubmit={handleSubmit}
         >        
             <input 
-            type="text"
+            type="email"
             placeholder="Correo"
             name="correo"
             value={correo}
