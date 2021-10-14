@@ -7,9 +7,9 @@
     align-items: center;
 }
 .portafolio__pagina{
-    width: 100vw;
+    width: 80vw;
     background-color: darken($color: $fuentePrimario, $amount: 10);
-    margin: 0 60px 20px 40px;
+    margin: 0 60px 20px 60px;
     height: 300px;
     border-radius: 20px;
     display: flex;
@@ -25,7 +25,7 @@
         img{
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
     }
     .portafolio__pagina-texto{
@@ -48,13 +48,48 @@
         
     }
 }
+@media screen and (max-width: 1300px){
 
+    .portafolio__pagina{
+        .portafolio__pagina-img{
+            left: 50px;
+        }
+    }
+    
+}
 @media screen and (max-width: 1174px){
+    .portafolioContenedor{
+        margin: auto;
+        width: 90vw;
+        flex-direction: column;
+    }
+    
     
 }
 
-@media screen and (max-width: 430px){
-    
+@media screen and (max-width: 900px){
+
+    .portafolio__pagina{
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        margin: 20px 0;
+        padding: 30px 0;
+        .portafolio__pagina-img{
+            position: relative;
+            left: auto;
+            width: 70vw;
+        }
+        .portafolio__pagina-texto{
+            position: relative;
+            left: auto;
+            h4{
+                text-align: center;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 330px){
