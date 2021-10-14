@@ -21,6 +21,7 @@ import AdmImagenes from '../components/pages/Dashboard/AdmImagenes';
 import { login } from '../actions/auth';
 import { startVerImagenes } from '../actions/img';
 import SpriteCaminando from '../components/ui/Esperando/SpriteCaminando';
+import AdmPortafolio from '../components/pages/Dashboard/AdmPortafolio';
 
 
 
@@ -71,6 +72,7 @@ const AppRoutes = () => {
           {(uid) && <Route path="/dashboard/carrusel" exact component={AdmCarrusel}/>}
           {(uid) && <Route path="/dashboard/habilidades" exact component={AdmHabilidades}/>}
           {(uid) && <Route path="/dashboard/imagenes" exact component={AdmImagenes}/>}
+          {(uid) && <Route path="/dashboard/portafolio" exact component={AdmPortafolio}/>}
           
           <Route path="/galeria" exact component={GaleriaPage}/>
           <Route path="/imagen/:imagenId" exact component={ImagenPage}/>

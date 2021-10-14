@@ -28,4 +28,9 @@ export const types = {
     habilidadUpdateApp:'[Habilidad] Actualizar Habilidad App ',
     habilidadEliminarApp:'[Habilidad] Eliminar Habilidad App ',
 
+    paginasCargando: '[Portafolio] Cargando Portafolio',
+    paginasCargarPaginas: '[Portafolio] Cargar Portafolio',
+
+
+
 }

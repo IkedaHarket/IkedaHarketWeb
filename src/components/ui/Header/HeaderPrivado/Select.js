@@ -45,6 +45,13 @@ const Select = () => {
                 >
                     Imagenes
                 </NavLink>
+                <NavLink activeClassName="dashboardMenu__item-active" 
+                className="boton" 
+                to="/dashboard/portafolio"
+                onClick={handleHamburger}
+                >
+                    Portafolio
+                </NavLink>
             </div>
         </div>
         
