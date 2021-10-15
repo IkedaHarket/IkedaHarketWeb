@@ -63,10 +63,10 @@ export const startCrearPagina = (pagina)=>{
             dispatch(startVerPagina())
 
             Swal.close();
-            Swal.fire('Listo','Imagen agregada correctamente','success')
+            Swal.fire('Listo','Pagina agregada correctamente','success')
         } catch (error) {
             console.log(error)
-            Swal.fire('Error','Ocurrio un error al agregar la imagen','error')
+            Swal.fire('Error','Ocurrio un error al agregar la Pagina','error')
         }
     }
 }
@@ -96,18 +96,17 @@ export const startActualizarPagina = (pagina,paginaNueva)=>{
             const fileUrl = await dispatch(startActualizarPag(pagina,paginaNueva));
             pagina.imagen = fileUrl;
 
-            const resp = await fetchConToken(`paginas/${pagina.id}`,{...pagina},'PUT');
-            const body = await resp.json();
+            await fetchConToken(`paginas/${pagina.id}`,{...pagina},'PUT');
 
             dispatch(startVerPagina());
             dispatch(clearPaginaActiva());
 
             Swal.close();
-            Swal.fire('Listo','Imagen actualizada correctamente','success')
+            Swal.fire('Listo','Pagina actualizada correctamente','success')
              
         } catch (error) {
             console.log(error)
-            Swal.fire('Error','Ocurrio un error al actualizar la Imagen','error')
+            Swal.fire('Error','Ocurrio un error al actualizar la pagina','error')
         }
     }
 }

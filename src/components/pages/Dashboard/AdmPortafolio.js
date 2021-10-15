@@ -27,7 +27,7 @@ const AdmPortafolio = () => {
 
     const [ formValues, handleInputChange,,setFormValues ] = useForm(initialForm)
 
-    const {id,nombre,imagen,enlace,descripcion} = formValues;
+    const {id,nombre,enlace,descripcion} = formValues;
 
     useEffect(()=>{
         if(paginaActiva){
