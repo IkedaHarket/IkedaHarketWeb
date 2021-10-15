@@ -30,6 +30,8 @@ export const types = {
 
     paginasCargando: '[Portafolio] Cargando Portafolio',
     paginasCargarPaginas: '[Portafolio] Cargar Portafolio',
+    setPaginaActiva: '[Portafolio] Set Pagina Activa',
+    clearPaginaActiva: '[Portafolio] Clear Pagina Activa',
 
 
 

@@ -18,7 +18,19 @@ export const paginaReducer = (state = initialState , action)=>{
                 ...state,
                 paginaCargando: false
             }
-
+        case types.setPaginaActiva:
+            return{
+                ...state,
+                paginas:[
+                    ...state.paginas
+                ],
+                paginaActiva: action.payload
+            }
+        case types.clearPaginaActiva:
+            return{
+                ...state,
+                paginaActiva: null
+            }
 
 
         default:    

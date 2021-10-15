@@ -1,12 +1,22 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { setPaginaActiva } from '../../../actions/pagina';
 
-const Pagina = ({nombre,enlace,imagen,descripcion}) => {
+const Pagina = ({id,nombre,enlace,imagen,descripcion}) => {
+
+    const dispatch = useDispatch();
+
+
+    const handlePaginaActiva = ()=>{
+        dispatch(setPaginaActiva({id,nombre,enlace,imagen,descripcion}))
+    }
+
     return (
-        <div className="portafolio__pagina">
-            <div className="portafolio__pagina-img">
+        <div className="portafolio__pagina" onClick={handlePaginaActiva}>
+            <div className="portafolio__pagina-img"onClick={handlePaginaActiva} >
                 <img src={imagen} alt={nombre}/>
             </div>
-            <div className="portafolio__pagina-texto">
+            <div className="portafolio__pagina-texto" onClick={handlePaginaActiva}>
                 <h4>{nombre}</h4>
                 <p>{descripcion}</p>
             

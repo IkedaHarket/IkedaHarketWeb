@@ -60,6 +60,7 @@ const AdmImagenes = () => {
         if(titulo.length < 2) return Swal.fire('Error','El titulo es demasiado corto','error');
         if(texto.length < 2) return Swal.fire('Error','El texto es demasiado corto','error');
         if(!formValues.img)return Swal.fire('Error','Debe seleccionar una imagen','error');
+        
         if(codigo){
             (imgActiva.img === formValues.img)
             ?dispatch(startActualizarImagen(formValues,false))

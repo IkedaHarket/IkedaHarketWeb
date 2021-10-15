@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Container, Form, Row } from 'react-bootstrap'
 import TituloAnimado from '../../ui/TituloAnimado/TituloAnimado'
 // import {iconos} from '../../../images/icons/index'
@@ -6,46 +6,65 @@ import TituloAnimado from '../../ui/TituloAnimado/TituloAnimado'
 
 import { useForm } from '../../../hooks/useForm'
 import Swal from 'sweetalert2'
+import { useDispatch } from 'react-redux'
+import { clearPaginaActiva, startActualizarPagina, startBorrarPagina, startCrearPagina } from '../../../actions/pagina'
+import PortafolioContenedor from '../../ui/Portafolio/PortafolioContenedor'
+import { useSelector } from 'react-redux'
 
 const initialForm = {
-    codigo:'',
+    id:'',
     nombre: '',
-    img:'',
+    imagen:'',
     enlace:'',
+    descripcion:''
 }
 
 const AdmPortafolio = () => {
 
+    const dispatch = useDispatch();
+
+    const {paginaActiva} = useSelector(state => state.pagina)
+
     const [ formValues, handleInputChange,,setFormValues ] = useForm(initialForm)
 
-    const {codigo,nombre,img,enlace} = formValues;
+    const {id,nombre,imagen,enlace,descripcion} = formValues;
+
+    useEffect(()=>{
+        if(paginaActiva){
+            setFormValues(paginaActiva)
+        }else{
+            setFormValues(initialForm)
+        }
+    },[paginaActiva,setFormValues])
+
 
     const handleFile = (e)=>{
         setFormValues({
             ...formValues,
-            img:e
+            imagen:e
         })
     }
     const reset = ()=>{
-        // dispatch(imgActivaClear());
+        dispatch(clearPaginaActiva());
     }
     const handleEliminar = ()=>{
-        // dispatch(startBorrarImagen(codigo));
-        Swal.fire('Listo','Imagen eliminada correctamente','success')
+        dispatch(startBorrarPagina(id));
+        Swal.fire('Listo','Pagina eliminada correctamente','success')
         setFormValues(initialForm)
     }
     const handleSubmit = (e)=>{
         e.preventDefault();
         if(nombre.length < 2) return Swal.fire('Error','El nombre es demasiado corto','error');
-        if(enlace.length < 2) return Swal.fire('Error','El enlace es demasiado corto','error');
-        if(!formValues.img)   return Swal.fire('Error','Debe seleccionar una imagen','error');
-        // if(codigo){
-        //     (imgActiva.img === formValues.img)
-        //     ?dispatch(startActualizarImagen(formValues,false))
-        //     :dispatch(startActualizarImagen(formValues,true))
-        // }else{
-        //     dispatch(startCrearImagen(formValues))
-        // }
+        if(enlace.length < 8) return Swal.fire('Error','El enlace es demasiado corto','error');
+        if(!formValues.imagen)   return Swal.fire('Error','Debe seleccionar una imagen','error');
+        
+        if(id){
+            (paginaActiva.imagen === formValues.imagen)
+            ?dispatch(startActualizarPagina(formValues,false))
+            :dispatch(startActualizarPagina(formValues,true))
+        }else{
+            dispatch(startCrearPagina(formValues))
+        }
         setFormValues(initialForm);
     }
 
@@ -59,7 +78,7 @@ const AdmPortafolio = () => {
                         <Form className="admPortafolio__form" onSubmit={handleSubmit} encType="multipart/form-data">
                             <input 
                                 type="hidden"
-                                value={(codigo) && codigo}
+                                value={(id) && id}
                             />
                             <input 
                                 type="text"
@@ -75,6 +94,12 @@ const AdmPortafolio = () => {
                                 value={enlace}
                                 onChange={handleInputChange}
                             />
+                            <textarea
+                                placeholder="Decripcion"
+                                name="descripcion"
+                                value={descripcion}
+                                onChange={handleInputChange}
+                            />
                         <Form.File 
                                 className="my-3"
                                 id="custom-file"
@@ -83,29 +108,32 @@ const AdmPortafolio = () => {
                                 onChange={(e) => handleFile (e.target.files[0])}
                                 custom
                             />
+                            <div>
                             <button
                                 type="submit"
                                 className="boton mr-3 mb-3"
                             >
-                                {(codigo) ? 'Actualizar' : ' Agregar'}
+                                {(id) ? 'Actualizar' : ' Agregar'}
                             </button>
-                            {(codigo) && 
+                            {(id) && 
                             (
                             <button type="reset" onClick={reset} className="boton mr-3">
                                Limpiar
                             </button>
                             )
                             } 
-                            {(codigo) && 
+                            {(id) && 
                             (
                             <button onClick={handleEliminar} className="boton mr-3">
                                Eliminar
                             </button>
                             )
                             }
+                            </div>
                         </Form>
                     </Col>
                 </Row>
+                <PortafolioContenedor />
             </Container>
         </div>
     )
